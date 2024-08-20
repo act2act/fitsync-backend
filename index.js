@@ -9,6 +9,7 @@ const applicationRouter = require('./api/applications')
 const reservationRouter = require('./api/reservations')
 
 const app = express()
+const PORT = process.env.PORT || 4000
 
 // Middlewares
 require('dotenv').config()
@@ -39,6 +40,6 @@ app.use('/connection', connectRouter)
 app.use('/applications', applicationRouter)
 app.use('/reservations', reservationRouter)
 
-app.listen(process.env.API_PORT, () => {
-    console.log(`Server has started on port ${process.env.API_PORT}`)
+app.listen(PORT, () => {
+    console.log(`Server has started on port ${PORT}`)
 })
